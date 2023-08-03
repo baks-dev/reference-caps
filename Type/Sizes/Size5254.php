@@ -49,7 +49,7 @@ final class Size5254 implements SizeCapsInterface
      */
     public static function sort(): int
     {
-        return 10;
+        return 50;
     }
 
 
