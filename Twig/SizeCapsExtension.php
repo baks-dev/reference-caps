@@ -37,7 +37,7 @@ final class SizeCapsExtension extends AbstractExtension
 		];
 	}
 	
-	public function call(Environment $twig, ?string $value) : string
+	public function call(Environment $twig, ?string $value): string
 	{
         if(empty($value)) return '';
 
@@ -53,7 +53,7 @@ final class SizeCapsExtension extends AbstractExtension
 	
 	
 	
-	public function render(Environment $twig, ?string $value) : string
+	public function render(Environment $twig, ?string $value): string
 	{
         if(empty($value)) return '';
         
