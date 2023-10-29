@@ -29,23 +29,13 @@ final class SizeCapsType extends StringType
 
     public function convertToDatabaseValue($value, AbstractPlatform $platform): mixed
     {
-        return $value instanceof SizeCaps ? $value->getSize() : $value;
+        return (string) $value;
     }
     
 
     public function convertToPHPValue($value, AbstractPlatform $platform): mixed
     {
-
-        /** @var SizeCaps $size */
-        foreach(SizeCaps::cases() as $size)
-        {
-            if($size->getSizeValue() === $value)
-            {
-                return $size;
-            }
-        }
-
-        throw new InvalidArgumentException(sprintf('Not found Size Clothing %s', $value));
+        return !empty($value) ? new SizeCaps($value) : null;
 
     }
 
