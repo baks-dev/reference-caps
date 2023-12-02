@@ -31,8 +31,8 @@ use Symfony\Component\Form\DataTransformerInterface;
 final class ChoiceSizeCapsFieldTransformer implements DataTransformerInterface
 {
 	
-	public function transform(mixed $value)
-	{
+	public function transform(mixed $value): ?SizeCaps
+    {
 		if(empty($value)) { return null; }
 		
 		return new SizeCaps($value);
