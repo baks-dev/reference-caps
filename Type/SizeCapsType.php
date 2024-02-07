@@ -22,9 +22,10 @@ namespace BaksDev\Reference\Caps\Type;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\StringType;
+use Doctrine\DBAL\Types\Type;
 use InvalidArgumentException;
 
-final class SizeCapsType extends StringType
+final class SizeCapsType extends Type
 {
 
     public function convertToDatabaseValue($value, AbstractPlatform $platform): mixed
@@ -33,7 +34,7 @@ final class SizeCapsType extends StringType
     }
     
 
-    public function convertToPHPValue($value, AbstractPlatform $platform): mixed
+    public function convertToPHPValue($value, AbstractPlatform $platform): ?SizeCaps
     {
         return !empty($value) ? new SizeCaps($value) : null;
 
@@ -51,4 +52,9 @@ final class SizeCapsType extends StringType
         return true;
     }
 
+
+    public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
+    {
+        return $platform->getStringTypeDeclarationSQL($column);
+    }
 }
