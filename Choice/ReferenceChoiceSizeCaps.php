@@ -64,4 +64,8 @@ final class ReferenceChoiceSizeCaps implements FieldsChoiceInterface, ReferenceC
         return ChoiceSizeCapsFieldForm::class;
     }
 
+    public function constraints(): ?array
+    {
+        return null;
+    }
 }
