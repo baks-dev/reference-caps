@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'placeholder' =>'Choose a size caps ...',
-	'label' =>'Size Caps',
+    'placeholder' => 'Choose a size caps ...',
+    'label' => 'Size Caps',
 
 
 ];

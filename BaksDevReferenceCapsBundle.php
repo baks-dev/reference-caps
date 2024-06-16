@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace BaksDev\Reference\Caps;
 
-use DirectoryIterator;
+use BaksDev\Reference\Caps\Choice\ReferenceChoiceSizeCaps;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
@@ -50,6 +50,11 @@ class BaksDevReferenceCapsBundle extends AbstractBundle
             self::NAMESPACE.'Twig\\',
             self::PATH.'Twig'
         );
+
+        $services->set(ReferenceChoiceSizeCaps::class)
+            ->tag('baks.reference.choice')
+            ->tag('baks.fields.choice');
+
     }
-	
+
 }

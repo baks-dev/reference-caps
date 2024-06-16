@@ -33,38 +33,38 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class ChoiceSizeCapsFieldForm extends AbstractType
 {
-	private ChoiceSizeCapsFieldTransformer $transformer;
-	
-	
-	public function __construct(ChoiceSizeCapsFieldTransformer $transformer)
-	{
-		$this->transformer = $transformer;
-	}
-	
-	public function buildForm(FormBuilderInterface $builder, array $options) : void
-	{
-		$builder->addModelTransformer($this->transformer);
-	}
-	
-	
-	public function configureOptions(OptionsResolver $resolver) : void
-	{
-		$resolver->setDefaults([
-			'choices' => SizeCaps::cases(),
-			'choice_value' => function(?SizeCaps $size) {
-				return $size?->getSizeValue();
-			},
-			'choice_label' => function(SizeCaps $size) {
-				return $size->getSizeValue();
-			},
-			'translation_domain' => 'reference.size.caps',
-			'placeholder' => 'placeholder',
-			'attr' => ['data-select' => 'select2']
-		]);
-	}
-	
-	public function getParent(): string
+    private ChoiceSizeCapsFieldTransformer $transformer;
+
+
+    public function __construct(ChoiceSizeCapsFieldTransformer $transformer)
     {
-		return ChoiceType::class;
-	}
+        $this->transformer = $transformer;
+    }
+
+    public function buildForm(FormBuilderInterface $builder, array $options): void
+    {
+        $builder->addModelTransformer($this->transformer);
+    }
+
+
+    public function configureOptions(OptionsResolver $resolver): void
+    {
+        $resolver->setDefaults([
+            'choices' => SizeCaps::cases(),
+            'choice_value' => function(?SizeCaps $size) {
+                return $size?->getSizeValue();
+            },
+            'choice_label' => function(SizeCaps $size) {
+                return $size->getSizeValue();
+            },
+            'translation_domain' => 'reference.size.caps',
+            'placeholder' => 'placeholder',
+            'attr' => ['data-select' => 'select2']
+        ]);
+    }
+
+    public function getParent(): string
+    {
+        return ChoiceType::class;
+    }
 }

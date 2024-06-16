@@ -100,10 +100,9 @@ final class SizeCaps
     {
         return array_filter(
             get_declared_classes(),
-            static function($className)
-                {
-                    return in_array(SizeCapsInterface::class, class_implements($className), true);
-                },
+            static function($className) {
+                return in_array(SizeCapsInterface::class, class_implements($className), true);
+            },
         );
     }
 

@@ -7,5 +7,5 @@ use BaksDev\Reference\Caps\Type\SizeCapsType;
 use Symfony\Config\DoctrineConfig;
 
 return static function(DoctrineConfig $doctrine) {
-	$doctrine->dbal()->type(SizeCaps::TYPE)->class(SizeCapsType::class);
+    $doctrine->dbal()->type(SizeCaps::TYPE)->class(SizeCapsType::class);
 };

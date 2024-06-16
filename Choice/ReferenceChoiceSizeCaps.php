@@ -32,7 +32,6 @@ use BaksDev\Reference\Caps\Type\SizeCaps;
 
 final class ReferenceChoiceSizeCaps implements FieldsChoiceInterface, ReferenceChoiceInterface
 {
-
     public function equals($key): bool
     {
         return $key === SizeCaps::TYPE;

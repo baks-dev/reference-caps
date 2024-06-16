@@ -47,7 +47,7 @@ final class SizeCapsListener
     {
         $this->collection = $collection;
     }
-    
+
 
     public function onKernelController(ControllerEvent $event): void
     {

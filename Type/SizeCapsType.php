@@ -23,7 +23,6 @@ namespace BaksDev\Reference\Caps\Type;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\StringType;
 use Doctrine\DBAL\Types\Type;
-use InvalidArgumentException;
 
 final class SizeCapsType extends Type
 {
@@ -32,7 +31,7 @@ final class SizeCapsType extends Type
     {
         return (string) $value;
     }
-    
+
 
     public function convertToPHPValue($value, AbstractPlatform $platform): ?SizeCaps
     {
