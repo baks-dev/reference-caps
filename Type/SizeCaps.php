@@ -26,7 +26,7 @@ use BaksDev\Reference\Caps\Type\Sizes\Collection\SizeCapsInterface;
 final class SizeCaps
 {
 
-    public const TYPE = 'size_caps_type';
+    public const string TYPE = 'size_caps_type';
 
     private ?SizeCapsInterface $size = null;
 
