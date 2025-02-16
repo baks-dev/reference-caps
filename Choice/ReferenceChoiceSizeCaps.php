@@ -43,13 +43,11 @@ final class ReferenceChoiceSizeCaps implements FieldsChoiceInterface, ReferenceC
         return SizeCaps::TYPE;
     }
 
-
-    /** Возвращает класс */
+    /** Возвращает класс поля */
     public function class(): string
     {
         return SizeCaps::class;
     }
-
 
     public function domain(): string
     {
